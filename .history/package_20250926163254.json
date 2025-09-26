@@ -1,0 +1,23 @@
+{
+  "name": "my-playwright-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "codegen": "npx playwright codegen",
+    "show-report": "npx playwright show-report",
+    "test:features": "cucumber-js --require tests/support --require tests/pages --require tests/steps --format progress --publish-quiet",
+    "test:features:debug": "cucumber-js --require tests/support --require tests/pages --require tests/steps --format progress --retry 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.55.1",
+    "playwright": "^1.55.1"
+  }
+}

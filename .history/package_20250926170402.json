@@ -1,0 +1,25 @@
+{
+  "name": "my-playwright-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install:playwright": "npx playwright install --with-deps",
+    "clean:reports": "rimraf reports && mkdirp reports",
+    "test:features": "npm run clean:reports && cucumber-js --profile default",
+    "test:features:debug": "HEADLESS=false cucumber-js --profile debug",
+    "test:features:parallel": "cucumber-js --profile parallel",
+    "report:html": "node scripts/generate-cucumber-html.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.55.1",
+    "mkdirp": "^3.0.1",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "playwright": "^1.55.1",
+    "rimraf": "^6.0.1"
+  }
+}
