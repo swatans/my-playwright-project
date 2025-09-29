@@ -75,10 +75,3 @@ When('I click the "Logout" menu entry', async function () {
     await this.page.locator('[data-test="logout-sidebar-link"], #logout_sidebar_link').first().click().catch(() => null);
     await this.page.waitForURL('**/index.html', { timeout: 5000 }).catch(() => null);
 });
-
-Then('I should see the login page', async function () {
-    const uname = this.page.locator('[data-test="username"], #user-name');
-    const pass = this.page.locator('[data-test="password"], #password');
-    const have = (await uname.count() > 0) && (await pass.count() > 0);
-    assert.ok(have, 'Login page not visible');
-});

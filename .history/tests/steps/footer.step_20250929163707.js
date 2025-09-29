@@ -77,19 +77,3 @@ Then('the page opens (or link exists)', async function () {
     }
     assert.ok(found, 'No link found or no new page opened');
 });
-
-Then('the footer should be visible', async function () {
-    const el = this.page.locator('footer, .footer, [data-test="footer"]');
-    assert.ok(await el.count() > 0 && await el.first().isVisible().catch(() => false), 'Footer not visible');
-});
-
-When('I go back to inventory', async function () {
-    const backBtn = this.page.locator('button[data-test="back-to-products"], #back-to-products, a:has-text("Back Home")').first();
-    if (await backBtn.count() > 0) {
-        await backBtn.click();
-        await this.page.waitForURL('**/inventory.html', { timeout: 3000 }).catch(() => null);
-        return;
-    }
-    await this.page.goto('https://www.saucedemo.com/inventory.html').catch(() => null);
-    await this.page.waitForSelector('.inventory_list, .inventory_container, text=Products', { timeout: 3000 }).catch(() => null);
-});

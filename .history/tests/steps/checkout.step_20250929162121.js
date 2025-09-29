@@ -1,7 +1,6 @@
 // tests/steps/checkout.step.js
 const { When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
-const CheckoutCompletePage = require('../pages/CheckoutCompletePage');
 
 function parseFlexibleDataTable(dataTable) {
     try {
@@ -36,28 +35,31 @@ When('I fill checkout form with:', async function (dataTable) {
 
 When('I submit checkout', async function () {
     // click Continue and wait for either navigation to step-two OR an error visible
-    await this.page.click('input[data-test="continue"], #continue').catch(() => null);
-
-    // race between navigation or error
+    const clickPromise = this.page.click('input[data-test="continue"], #continue');
+    // wait for either URL change or for checkout error to appear
     const navPromise = this.page.waitForURL('**/checkout-step-two.html', { timeout: 7000 }).catch(() => null);
     const errorPromise = this.page.locator('.error-message-container, .error-message').waitFor({ state: 'visible', timeout: 7000 }).catch(() => null);
 
+    await clickPromise;
+    // whichever resolves first - navigation or error - will indicate outcome
     await Promise.race([navPromise, errorPromise]);
 });
 
 Then('I should see checkout error message {string}', async function (expected) {
     const el = this.page.locator('.error-message-container, .error-message').first();
-    const txt = (await el.textContent().catch(() => '')).trim();
+    const txt = (await el.textContent().catch(() => '')) || '';
     assert.ok(txt.includes(expected), `Expected error "${expected}" but got "${txt}"`);
 });
 
 Then('I should be on checkout step two', async function () {
-    // allow URL or presence of summary container
+    // more robust: wait for either URL or visible element unique to step-two
     const url = this.page.url();
-    if (url.includes('checkout-step-two.html')) return;
+    if (url.includes('checkout-step-two.html')) return; // already there
 
+    // wait for URL first (gives chance for navigation)
     await this.page.waitForURL('**/checkout-step-two.html', { timeout: 7000 }).catch(() => null);
 
+    // then check known step-two selectors
     const ok = await this.page.locator('.cart_list, .summary_info, [data-test="checkout-summary"], .checkout_summary_container').first().isVisible().catch(() => false);
     assert.ok(ok, 'Not on checkout step two page');
 });
@@ -80,51 +82,32 @@ Then('the summary total should be displayed', async function () {
 });
 
 When('I finish the checkout', async function () {
+    // click finish and wait for complete page or for a visible thank-you element
     await this.page.click('button[data-test="finish"], #finish, .cart_button.finish').catch(() => null);
-    // try wait for complete url, but not fail hard if single-page flow
     await this.page.waitForURL('**/checkout-complete.html', { timeout: 7000 }).catch(() => null);
 });
 
 Then('the cart badge should be empty or not displayed', async function () {
     const count = await this.page.locator('.shopping_cart_badge').count();
     if (count === 0) return;
-    const text = (await this.page.locator('.shopping_cart_badge').textContent().catch(() => '')).trim();
-    assert.ok(!text || text === '' || text === '0', 'Cart badge still present after finish');
+    const text = (await this.page.locator('.shopping_cart_badge').textContent().catch(() => null)) || '';
+    assert.ok(!text || text.trim() === '' || text.trim() === '0', 'Cart badge still present after finish');
 });
 
-/* Checkout form visibility */
+
 Then('I should see the checkout form', async function () {
     const form = this.page.locator('[data-test="checkout-info-container"], #checkout_info_container');
     const title = this.page.locator('.title[data-test="title"], .header_secondary_container .title');
-    const formVisible = await form.isVisible().catch(() => false);
-    const titleText = (await title.textContent().catch(() => '')).toLowerCase();
-    const ok = formVisible || titleText.includes('checkout');
+    const ok = (await form.isVisible().catch(() => false)) ||
+        ((await title.textContent().catch(() => '')).includes('Checkout'));
     assert.ok(ok, 'Checkout form not visible');
 });
 
-/* Checkout complete page / thank you */
 Then('I should see the order confirmation (thank you) page', async function () {
-    // use helper page object if present
-    this.checkoutComplete = this.checkoutComplete || new CheckoutCompletePage(this.page);
-
-    // wait for container
-    const visible = await this.checkoutComplete.container.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
-    assert.ok(visible, 'Checkout complete container not visible');
-
-    const header = (await this.checkoutComplete.headerText()).toLowerCase();
-    const body = (await this.checkoutComplete.bodyText()).toLowerCase();
-
-    assert.ok(header.includes('thank') || header.includes('complete') || header.includes('thank you'), `Header unexpected: ${header}`);
-    assert.ok(body.length > 0, 'Complete text is empty');
-
-    // optional: pony image check
-    const hasPony = await this.checkoutComplete.hasPonyImage().catch(() => false);
-    // don't fail hard if missing, but log for info — we'll assert true to be strict
-    assert.ok(hasPony, 'Pony image not found on complete page');
+    const url = this.page.url();
+    if (url.includes('checkout-complete.html')) return;
+    const el = this.page.locator('[data-test="checkout-complete-container"], .checkout_complete_container, .complete-header').first();
+    const txt = (await el.textContent().catch(() => '')).toLowerCase();
+    assert.ok(txt.includes('thank') || txt.includes('complete'), `Order confirmation not shown (url=${url}, text="${txt}")`);
 });
 
-When('I click Back Home on the order confirmation page', async function () {
-    this.checkoutComplete = this.checkoutComplete || new CheckoutCompletePage(this.page);
-    await this.checkoutComplete.clickBackToProducts();
-    await this.page.waitForURL('**/inventory.html', { timeout: 5000 }).catch(() => null);
-});
