@@ -11,6 +11,11 @@ When('I login with username {string} and password {string}', async function (use
     await this.loginPage.login(u, p, { waitTimeout });
 });
 
+Then('I should be on the inventory page', async function () {
+    const ok = await this.loginPage.isOnInventory();
+    assert.ok(ok, 'Not on inventory page');
+});
+
 // Generic text presence check (used by: Then I should see "Products")
 Then('I should see {string}', async function (text) {
     // prefer header/title detection first
