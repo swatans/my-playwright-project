@@ -92,7 +92,7 @@ jobs:
       - name: Generate aggregated HTML report
         env:
           BROWSER: matrix # label
-          PARALLEL_WORKERS: 4
+          PARALLEL_WORKERS: ${{ matrix.PARALLEL_WORKERS || 'n/a' }}
         run: |
           node scripts/generate-cucumber-html.js
 

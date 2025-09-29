@@ -15,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.55.1",
     "mkdirp": "^3.0.1",
     "multiple-cucumber-html-reporter": "^3.9.3",
     "playwright": "^1.55.1",
