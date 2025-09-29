@@ -56,7 +56,7 @@ When('I click footer {string}', async function (label) {
 });
 
 
-Then('the page opens or links exist', async function () {
+Then('the page opens (or link exists)', async function () {
     const ctx = this.page.context();
     const pages = ctx.pages();
 

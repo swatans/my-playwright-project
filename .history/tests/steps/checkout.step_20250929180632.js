@@ -80,6 +80,7 @@ Then('the summary total should be displayed', async function () {
 });
 
 When('I finish the checkout', async function () {
+    // prefer the page-level locator that exists on the checkout-step-two page
     const finishSelectors = [
         'button[data-test="finish"]',
         '#finish',
@@ -87,6 +88,8 @@ When('I finish the checkout', async function () {
         '.cart_button.finish',
         'input[data-test="finish"]'
     ];
+
+    // find a clickable finish button
     let finishBtn = null;
     for (const sel of finishSelectors) {
         const loc = this.page.locator(sel).first();
