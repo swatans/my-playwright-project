@@ -846,25 +846,23 @@ body.darkmode .navbar-text {
                 
                     
                     
-                        <i class="fa fa-tags fa-lg"></i>
+                        <i class="fa fa-tag fa-lg"></i>
                         
-                            <span class="tag">@homepage</span>
-                        
-                            <span class="tag">@smoke</span>
+                            <span class="tag">@footer</span>
                         
                     
                 
             </div>
             <h1>Feature:
-                <small>Homepage / Product list validations</small>
+                <small>Footer checks</small>
             </h1>
             
                 <p>
                <p><strong>File name:</strong>
-                    homepage.feature
+                    footer.feature
                 </p>
                 <p><strong>Relative path:</strong>
-                    features/homepage.feature</p>
+                    features/footer.feature</p>
             
         </div>
 
@@ -900,7 +898,7 @@ body.darkmode .navbar-text {
         <tr>
             <td class="chart">
                 <canvas id="scenario-chart"></canvas>
-                <div class="total">4</div>
+                <div class="total">3</div>
             </td>
             <td>
                 <table class="tile_info">
@@ -911,7 +909,7 @@ body.darkmode .navbar-text {
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">33.33 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -920,8 +918,18 @@ body.darkmode .navbar-text {
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">33.33 %</td>
                     
+                    
+                    <tr>
+                        <td>
+                            <p data-bs-toggle="tooltip" data-placement="left" title="Scenario has no step implmentation.">
+                                <i class="fa fa-question-circle not-defined-color"></i>
+                                Not defined
+                            </p>
+                        </td>
+                        <td class="percentage">33.33 %</td>
+                    </tr>
                     
                     </tr>
                     
@@ -929,6 +937,11 @@ body.darkmode .navbar-text {
                 </table>
             </td>
         </tr>
+        
+            <tr>
+                <th> Total duration:</th>
+                <tr><td>9697:17:29.998</td></tr>
+            </tr>
         
     </table>
 </div>
@@ -995,7 +1008,7 @@ body.darkmode .navbar-text {
                     
                     
                     <i class="fa fa-question-circle not-defined-color fa-lg">
-                        <span>matrix</span>
+                        <span>webkit</span>
                     </i>
                     
                     
@@ -1048,17 +1061,15 @@ body.darkmode .navbar-text {
                     
                         
                         
-                            <i class="fa fa-tags fa-lg"></i>
+                            <i class="fa fa-tag fa-lg"></i>
                             
-                                <span class="tag">@homepage</span>
-                            
-                                <span class="tag">@smoke</span>
+                                <span class="tag">@footer</span>
                             
                         
                     
                 </div>
 
-                <h2>Scenario: <small>Product names and price format</small></h2>
+                <h2>Scenario: <small>Social links open externally (Twitter / Facebook / LinkedIn)</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -1072,15 +1083,24 @@ body.darkmode .navbar-text {
                     
 
                     
+                        <li>
+                            <span class="step failed-background" data-bs-toggle="tooltip" title="Scenario failed">1</span>
+                        </li>
+                    
 
                     
                         <li>
-                            <span class="step passed-background" data-bs-toggle="tooltip" title="Scenario passed">5</span>
+                            <span class="step passed-background" data-bs-toggle="tooltip" title="Scenario passed">4</span>
                         </li>
                     
 
                     
 
+                    
+                        <li>
+                            <span style="font-size:1.2em"> Duration:</span>
+                            <span style=padding-right:5em>545:45:57.928</span>
+                        </li>
                     
                 </ul>
 
@@ -1111,6 +1131,10 @@ body.darkmode .navbar-text {
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">153:03:04.108</span>
+                                        
                                     
 
                                 </div>
@@ -1176,6 +1200,10 @@ body.darkmode .navbar-text {
                                     
 
                                     
+                                        
+                                            <span class="duration">236:33:40.876</span>
+                                        
+                                    
 
                                 </div>
 
@@ -1240,6 +1268,10 @@ body.darkmode .navbar-text {
                                     
 
                                     
+                                        
+                                            <span class="duration">00:05:58.931</span>
+                                        
+                                    
 
                                 </div>
 
@@ -1291,6 +1323,74 @@ body.darkmode .navbar-text {
                                     
                                         <div class="label" title="Success">
                                             <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">When </span>
+
+                                    
+                                        I click footer social "Twitter"
+                                        
+                                    
+
+                                    
+                                        
+                                            <span class="duration">153:21:50.584</span>
+                                        
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" data-bs-toggle="tooltip" data-placement="top" title="Step failed">
+                                            <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
                                         </div>
                                     
                                 
@@ -1299,10 +1399,14 @@ body.darkmode .navbar-text {
                                     <span class="keyword highlight">Then </span>
 
                                     
-                                        all product names start with "Sauce Labs"
+                                        a new tab should open with "twitter.com"
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">02:41:23.429</span>
+                                        
                                     
 
                                 </div>
@@ -1310,6 +1414,8 @@ body.darkmode .navbar-text {
                                 
                                     
 
+                                    
+                                        <a href="#error0-5-error" data-bs-toggle="collapse">+ Show Error</a>
                                     
 
                                     
@@ -1328,69 +1434,15 @@ body.darkmode .navbar-text {
 
                         
                             
+                                <div id="error0-5-error" class="scenario-step-collapse collapse">
+                                    <pre class=info>AssertionError [ERR_ASSERTION]: Expected host twitter.com in url "https://x.com/saucelabs"
+    + expected - actual
 
-                            
+    -false
+    +true
 
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">And </span>
-
-                                    
-                                        all product prices have format "$XX.XX"
-                                        
-                                    
-
-                                    
-
+    at CustomWorld.(anonymous) (/home/runner/work/my-playwright-project/my-playwright-project/tests/steps/footer.step.js:51:12)</pre>
                                 </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
                             
 
                             
@@ -1426,17 +1478,15 @@ body.darkmode .navbar-text {
                     
                         
                         
-                            <i class="fa fa-tags fa-lg"></i>
+                            <i class="fa fa-tag fa-lg"></i>
                             
-                                <span class="tag">@homepage</span>
-                            
-                                <span class="tag">@smoke</span>
+                                <span class="tag">@footer</span>
                             
                         
                     
                 </div>
 
-                <h2>Scenario: <small>Product Detail Page navigation</small></h2>
+                <h2>Scenario: <small>Copyright year and links</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -1458,7 +1508,16 @@ body.darkmode .navbar-text {
                     
 
                     
+                        <li>
+                            <span class="step not-defined-background" data-bs-toggle="tooltip" title="Scenario has nop step implementation.">1</span>
+                        </li>
+                    
 
+                    
+                        <li>
+                            <span style="font-size:1.2em"> Duration:</span>
+                            <span style=padding-right:5em>8706:16:24.625</span>
+                        </li>
                     
                 </ul>
 
@@ -1489,6 +1548,10 @@ body.darkmode .navbar-text {
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">129:50:13.669</span>
+                                        
                                     
 
                                 </div>
@@ -1554,6 +1617,10 @@ body.darkmode .navbar-text {
                                     
 
                                     
+                                        
+                                            <span class="duration">235:12:25.740</span>
+                                        
+                                    
 
                                 </div>
 
@@ -1618,69 +1685,9 @@ body.darkmode .navbar-text {
                                     
 
                                     
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        I open the product detail page for "Sauce Labs Backpack"
                                         
-                                    
-
+                                            <span class="duration">00:03:06.889</span>
+                                        
                                     
 
                                 </div>
@@ -1741,15 +1748,169 @@ body.darkmode .navbar-text {
                                     <span class="keyword highlight">Then </span>
 
                                     
-                                        I should see product name "Sauce Labs Backpack" on the PDP
+                                        the footer copyright matches current year
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">06:13:02.878</span>
+                                        
                                     
 
                                 </div>
 
                                 
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" title="Success">
+                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">When </span>
+
+                                    
+                                        I click footer "Terms of Service"
+                                        
+                                    
+
+                                    
+                                        
+                                            <span class="duration">8334:57:35.449</span>
+                                        
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" data-bs-toggle="tooltip" data-placement="top" title="Step has no implementation.">
+                                            <i class="fa fa-question-circle fa-2x not-defined-color"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">Then </span>
+
+                                    
+                                        the page opens (or link exists)
+                                        
+                                    
+
+                                    
+                                        
+                                            <span class="duration">0s</span>
+                                        
+                                    
+
+                                </div>
+
+                                
+                                    
+                                        <pre class="info">
+// With Callbacks
+Then (/^the page opens (or link exists)$/, (callback) => {
+    // Write code here that turns the phrase above into concrete actions
+    callback(null, 'pending');
+});
+
+// With Promises
+Then (/^the page opens (or link exists)$/, () => {
+    // Write code here that turns the phrase above into concrete actions
+    return Promise.resolve('pending');
+});
+                                        </pre>
                                     
 
                                     
@@ -1804,17 +1965,15 @@ body.darkmode .navbar-text {
                     
                         
                         
-                            <i class="fa fa-tags fa-lg"></i>
+                            <i class="fa fa-tag fa-lg"></i>
                             
-                                <span class="tag">@homepage</span>
-                            
-                                <span class="tag">@smoke</span>
+                                <span class="tag">@footer</span>
                             
                         
                     
                 </div>
 
-                <h2>Scenario: <small>Sorting Name (A to Z) and persists</small></h2>
+                <h2>Scenario: <small>Footer is present on inventory and cart pages</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -1838,512 +1997,11 @@ body.darkmode .navbar-text {
                     
 
                     
-                </ul>
-
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="x_content" style="display: none;">
-                <div class="scenario-step-container"></div>
-                    
-                        
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Given </span>
-
-                                    
-                                        I open the Saucedemo login page
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        I login with username "standard_user" and password "secret_sauce"
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Then </span>
-
-                                    
-                                        I should be on the inventory page
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        I sort products by "Name (A to Z)"
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Then </span>
-
-                                    
-                                        products are sorted alphabetically ascending
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">When </span>
-
-                                    
-                                        I refresh the page
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                            <div class="scenario-step-container">
-
-                                
-                                    
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                                        </div>
-                                    
-                                
-
-                                <div class="text">
-                                    <span class="keyword highlight">Then </span>
-
-                                    
-                                        products remain sorted by "Name (A to Z)"
-                                        
-                                    
-
-                                    
-
-                                </div>
-
-                                
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                                
-                            </div>
-
-                        
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                        
-
-                        
-                            
-                        
-
-                    
-                
-                        
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel" style="height: auto;">
-            <div class="x_title">
-
-                <div class="tags">
-                    
-                        
-                        
-                            <i class="fa fa-tags fa-lg"></i>
-                            
-                                <span class="tag">@homepage</span>
-                            
-                                <span class="tag">@smoke</span>
-                            
-                        
-                    
-                </div>
-
-                <h2>Scenario: <small>Sorting Price (low to high)</small></h2>
-
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
-                    </li>
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
                         <li>
-                            <span class="step passed-background" data-bs-toggle="tooltip" title="Scenario passed">5</span>
+                            <span style="font-size:1.2em"> Duration:</span>
+                            <span style=padding-right:5em>445:15:07.445</span>
                         </li>
                     
-
-                    
-
-                    
                 </ul>
 
                 <div class="clearfix"></div>
@@ -2373,6 +2031,10 @@ body.darkmode .navbar-text {
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">142:36:14.743</span>
+                                        
                                     
 
                                 </div>
@@ -2438,6 +2100,10 @@ body.darkmode .navbar-text {
                                     
 
                                     
+                                        
+                                            <span class="duration">220:08:14.989</span>
+                                        
+                                    
 
                                 </div>
 
@@ -2502,6 +2168,10 @@ body.darkmode .navbar-text {
                                     
 
                                     
+                                        
+                                            <span class="duration">00:02:05.935</span>
+                                        
+                                    
 
                                 </div>
 
@@ -2561,10 +2231,14 @@ body.darkmode .navbar-text {
                                     <span class="keyword highlight">When </span>
 
                                     
-                                        I sort products by "Price (low to high)"
+                                        I open the cart page
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">19:57:26.412</span>
+                                        
                                     
 
                                 </div>
@@ -2625,10 +2299,150 @@ body.darkmode .navbar-text {
                                     <span class="keyword highlight">Then </span>
 
                                     
-                                        products are sorted by price ascending
+                                        the footer should be visible
                                         
                                     
 
+                                    
+                                        
+                                            <span class="duration">02:12:41.691</span>
+                                        
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" title="Success">
+                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">When </span>
+
+                                    
+                                        I go back to inventory
+                                        
+                                    
+
+                                    
+                                        
+                                            <span class="duration">51:33:43.793</span>
+                                        
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" title="Success">
+                                            <i class="fa fa-check-circle fa-2x passed-color" data-bs-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">Then </span>
+
+                                    
+                                        the footer should be visible
+                                        
+                                    
+
+                                    
+                                        
+                                            <span class="duration">08:44:39.882</span>
+                                        
                                     
 
                                 </div>
@@ -2738,12 +2552,12 @@ body.darkmode .navbar-text {
                     ],
                     datasets: [{
                         data: [
-                            4,
+                            1,
+                            1,
                             0,
                             0,
                             0,
-                            0,
-                            0
+                            1
                         ],
                         backgroundColor: [
                             getColor(".passed-color", "#26B99A"),
